@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:8
 RUN yum -y update; yum clean all
 RUN yum -y install systemd; yum clean all; \
 (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done);  \
